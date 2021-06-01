@@ -68,5 +68,18 @@ public class Restaurant {
         return name;
     }
 
+    public int getTotalOrderValue(String[] OrderedMenuItems){
+        int totalamount = 0;
+
+        for (String itemName : OrderedMenuItems) {
+            //For each menu item find the item in menu.
+            Item item = findItemByName(itemName);
+            //Total value is the sum of prices of all items.
+            totalamount = totalamount + item.getPrice();
+        }
+
+        return totalamount;
+    }
+
 
 }
