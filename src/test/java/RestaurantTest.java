@@ -78,5 +78,22 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //New Feature by TDD
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>Get total cost<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void get_total_order_value_should_return_total_value_of_the_order_of_selected_menu_items() {
+        String[] OrderedMenuItems = {"Sweet corn soup", "Vegetable lasagne"};
+        int totalOrderValue = restaurant.getTotalOrderValue(OrderedMenuItems);
+        assertEquals(119 + 269, totalOrderValue);
+    }
+
+    @Test
+    public void get_total_order_value_should_return_zero_when_no_menu_item_is_selected() {
+        String[] OrderedMenuItems = {};
+        int totalOrderValue = restaurant.getTotalOrderValue(OrderedMenuItems);
+        assertEquals(0, totalOrderValue);
+    }
+
+//<<<<<<<<<<<<<<<<<<<<<<<Get total cost>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 }
